@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      header {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        background-image: url("./1.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .logo h1 {
+        font-size: 3em;
+        margin-bottom: 20px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+
+      /* Загальні стилі для секції контактів */
+      #contact {
+        padding: 50px;
+        background-color: #ffffff; /* Світлий фон */
+        text-align: center;
+      }
+
+      .contact-container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-container h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .contact-container p {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+      }
+
+      .contact-container a {
+        color: #007bff; /* Колір посилань */
+        text-decoration: none;
+      }
+
+      .contact-container a:hover {
+        text-decoration: underline;
+      }
+      /* Загальні стилі для секції меню */
+      #menu {
+        padding: 50px;
+        background-color: #f8f8f8; /* Світлий фон */
+        text-align: center;
+      }
+
+      .menu-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .menu-container h2 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .menu-item {
+        margin-bottom: 30px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .menu-item h3 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+      }
+
+      .menu-item p {
+        font-size: 1.2em;
+        line-height: 1.6;
+      }
+      /* Загальні стилі для секції "Про нас" */
+#about {
+    padding: 50px;
+    background-color: #f8f8f8; /* Світлий фон */
+    text-align: center;
+}
+
+/* Загальні стилі для секції "Контакти" */
+#contact {
+    padding: 50px;
+    background-color: #ffffff; /* Світлий фон */
+    text-align: center;
+}
+
+/* Інші стилі */
+.about-container,
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-container h2,
+.contact-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-container p,
+.contact-container p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Стилі для зображення у секції "Про нас" */
+.about-image {
+    max-width: 100%;
+    height: auto; /* Зберігає пропорції */
+    border-radius: 10px; /* Закруглені кути зображення */
+}
+
+    </style>
+    <title>Кафе "Смакота"</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>Кафе "Смакота"</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#about">Про нас</a></li>
+          <li><a href="#contact">Контакти</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="about" class="fade-in">
+      <div class="about-container">
+        <h2 class="slide-in">Про нас</h2>
+        <p class="fade-in">
+          Кафе "Смакота" — це місце, де ви зможете насолодитися смачною їжею та
+          затишною атмосферою. Ми пропонуємо різноманітне меню, яке задовольнить
+          навіть найвибагливіших гурманів.
+        </p>
+        <p class="fade-in">
+          Наша команда кухарів використовує тільки найсвіжіші інгредієнти, щоб
+          створити страви, які запам'ятаються надовго. Завітайте до нас, щоб
+          відчути справжній смак!
+        </p>
+        <p class="fade-in">
+          Ми прагнемо, щоб кожен гість залишився задоволений. У нашому меню ви
+          знайдете не тільки традиційні страви, а й авторські рецепти, які
+          зроблять ваш візит незабутнім.
+        </p>
+        <p class="fade-in">
+          Приходьте до нас з друзями, родиною або на романтичну вечерю. У нас
+          завжди затишно, смачно і комфортно!
+        </p>
+        <img
+          src="path/to/your/about-image.jpg"
+          alt="Кафе Смакота"
+          class="about-image bounce-in"
+        />
+      </div>
+    </section>
+
+
+<!-- Секція "Контакти" -->
+<section id="contact">
+    <div class="contact-container">
+        <h2 class="slide-in">Контакти</h2>
+        <p class="fade-in">Залишайтеся на зв'язку! Ми завжди раді вам!</p>
+        <p class="fade-in">Телефон: <a href="tel:+1234567890">+123 456 7890</a></p>
+        <p class="fade-in">Email: <a href="mailto:info@yourwebsite.com">info@yourwebsite.com</a></p>
+        <p class="fade-in">Адреса: Вулиця Смачного, 1, Київ, Україна</p>
+    </div>
+</section>
+
+    <section id="menu">
+        <div class="menu-container">
+            <h2 class="slide-in">Меню</h2>
+            <div class="menu-item fade-in">
+                <img src="./цезар.jfif" alt="Салат Цезар" class="menu-image">
+                <h3>Салат "Цезар"</h3>
+                <p>Свіжі овочі, курка, пармезан, крутони, соус Цезар.</p>
+                <p>Ціна: 150 грн</p>
+            </div>
+            <div class="menu-item fade-in">
+                <img src="./Піца Маргарита.jfif" alt="Піца Маргарита" class="menu-image">
+                <h3>Піца "Маргарита"</h3>
+                <p>Тонке тісто, томатний соус, моцарела, базилік.</p>
+                <p>Ціна: 200 грн</p>
+            </div>
+            <div class="menu-item fade-in">
+                <img src="./Спагеті карбонара.jfif" alt="Спагеті карбонара" class="menu-image">
+                <h3>Спагеті карбонара</h3>
+                <p>Спагеті, бекон, яйце, пармезан, чорний перець.</p>
+                <p>Ціна: 180 грн</p>
+            </div>
+            <div class="menu-item fade-in">
+                <img src="./Десерт Тірамісу.jfif" alt="Десерт Тірамісу" class="menu-image">
+                <h3>Десерт "Тірамісу"</h3>
+                <p>Класичний італійський десерт з кави та маскарпоне.</p>
+                <p>Ціна: 100 грн</p>
+            </div>
+        </div>
+    </section>
+    
+  </body>
+</html>
