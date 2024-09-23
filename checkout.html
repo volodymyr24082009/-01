@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Ваш основний CSS -->
+    <title>Оформлення замовлення - Кафе "Смакота"</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0e1a24, #1c2a35);
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+            margin-bottom: 20px;
+        }
+
+        .order-item {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .order-item h3 {
+            margin: 0;
+        }
+
+        .remove-from-cart {
+            padding: 5px 10px;
+            background-color: #ff3b3b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+            flex: 1;
+            margin-left: 10px;
+        }
+
+        .remove-from-cart:hover {
+            background-color: #ff1a1a;
+        }
+
+        .add-to-cart {
+            padding: 10px 20px;
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background-color: #ff5e99;
+        }
+
+        .back-button, .delete-button {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            background-color: transparent;
+            color: #ff007f;
+            text-decoration: none;
+            border: 2px solid #ff007f;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .back-button:hover, .delete-button:hover {
+            background-color: #ff007f;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .delete-button {
+            background-color: rgba(255, 0, 0, 0.1);
+            border: 2px solid rgba(255, 0, 0, 0.7);
+            color: rgba(255, 0, 0, 0.7);
+        }
+
+        .delete-button:hover {
+            background-color: rgba(255, 0, 0, 0.7);
+            color: white;
+        }
+
+        .cart-count {
+            margin-left: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Ваше замовлення</h2>
+        
+        <div class="order-item" id="caesar-item">
+            <h3>Салат "Цезар"</h3>
+            <p>Ціна: 150 грн</p>
+            <button class="add-to-cart">Додати в кошик</button>
+            <span class="cart-count">Кількість: <span id="caesar-count">0</span></span>
+            <button class="remove-from-cart" style="display: none;">Видалити з кошика</button>
+        </div>
+
+        <div class="order-item" id="margherita-item">
+            <h3>Піца "Маргарита"</h3>
+            <p>Ціна: 200 грн</p>
+            <button class="add-to-cart">Додати в кошик</button>
+            <span class="cart-count">Кількість: <span id="margherita-count">0</span></span>
+            <button class="remove-from-cart" style="display: none;">Видалити з кошика</button>
+        </div>
+
+        <div class="order-item" id="carbonara-item">
+            <h3>Спагеті Карбонара</h3>
+            <p>Ціна: 180 грн</p>
+            <button class="add-to-cart">Додати в кошик</button>
+            <span class="cart-count">Кількість: <span id="carbonara-count">0</span></span>
+            <button class="remove-from-cart" style="display: none;">Видалити з кошика</button>
+        </div>
+
+        <h3 style="text-align: center;">Разом: <span id="total-price">0</span> грн</h3>
+        
+        <a href="index.html" class="back-button">Назад до меню</a>
+        <button class="delete-button">Видалити замовлення</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const removeFromCartButtons = document.querySelectorAll('.remove-from-cart');
+            const caesarCountElement = document.getElementById('caesar-count');
+            const margheritaCountElement = document.getElementById('margherita-count');
+            const carbonaraCountElement = document.getElementById('carbonara-count');
+            const totalPriceElement = document.getElementById('total-price');
+
+            const prices = {
+                caesar: 150,
+                margherita: 200,
+                carbonara: 180
+            };
+
+            addToCartButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    let currentCount;
+
+                    if (index === 0) {
+                        currentCount = parseInt(caesarCountElement.textContent);
+                        caesarCountElement.textContent = currentCount + 1;
+                        currentCount + 1 === 1 ? removeFromCartButtons[0].style.display = 'inline-block' : null;
+                    } else if (index === 1) {
+                        currentCount = parseInt(margheritaCountElement.textContent);
+                        margheritaCountElement.textContent = currentCount + 1;
+                        currentCount + 1 === 1 ? removeFromCartButtons[1].style.display = 'inline-block' : null;
+                    } else if (index === 2) {
+                        currentCount = parseInt(carbonaraCountElement.textContent);
+                        carbonaraCountElement.textContent = currentCount + 1;
+                        currentCount + 1 === 1 ? removeFromCartButtons[2].style.display = 'inline-block' : null;
+                    }
+
+                    updateTotalPrice();
+                });
+            });
+
+            removeFromCartButtons.forEach((button, index) => {
+                button.addEventListener('click', function() {
+                    let currentCount;
+
+                    if (index === 0) {
+                        currentCount = parseInt(caesarCountElement.textContent);
+                        if (currentCount > 0) {
+                            caesarCountElement.textContent = currentCount - 1;
+                        }
+                    } else if (index === 1) {
+                        currentCount = parseInt(margheritaCountElement.textContent);
+                        if (currentCount > 0) {
+                            margheritaCountElement.textContent = currentCount - 1;
+                        }
+                    } else if (index === 2) {
+                        currentCount = parseInt(carbonaraCountElement.textContent);
+                        if (currentCount > 0) {
+                            carbonaraCountElement.textContent = currentCount - 1;
+                        }
+                    }
+
+                    // Сховати кнопку видалення, якщо кількість товару 0
+                    if (index === 0 && parseInt(caesarCountElement.textContent) === 0) {
+                        button.style.display = 'none';
+                    } else if (index === 1 && parseInt(margheritaCountElement.textContent) === 0) {
+                        button.style.display = 'none';
+                    } else if (index === 2 && parseInt(carbonaraCountElement.textContent) === 0) {
+                        button.style.display = 'none';
+                    }
+
+                    updateTotalPrice();
+                });
+            });
+
+            // Функція для видалення всього замовлення
+            const deleteOrderButton = document.querySelector('.delete-button');
+            deleteOrderButton.addEventListener('click', function() {
+                caesarCountElement.textContent = 0;
+                margheritaCountElement.textContent = 0;
+                carbonaraCountElement.textContent = 0;
+                removeFromCartButtons.forEach(button => button.style.display = 'none');
+                updateTotalPrice();
+            });
+
+            function updateTotalPrice() {
+                const totalPrice =
+                    (parseInt(caesarCountElement.textContent) * prices.caesar) +
+                    (parseInt(margheritaCountElement.textContent) * prices.margherita) +
+                    (parseInt(carbonaraCountElement.textContent) * prices.carbonara);
+                totalPriceElement.textContent = totalPrice;
+            }
+        });
+    </script>
+
+</body>
+</html>

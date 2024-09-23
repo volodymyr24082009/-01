@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Ваш основний CSS -->
+    <title>Оформлення замовлення - Кафе "Смакота"</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Світлий фон */
+        }
+        .order-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-container h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .order-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-item h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: transparent; /* Прозора кнопка */
+            color: #ff007f; /* Рожевий текст */
+            text-decoration: none;
+            border: 2px solid #ff007f; /* Рожевий контур */
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ff007f; /* Рожевий фон */
+            color: white; /* Білий текст */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="order-container">
+        <h2>Ваше замовлення</h2>
+        
+        <div class="order-item">
+            <h3>Салат "Цезар"</h3>
+            <p>Кількість: 2</p>
+            <p>Ціна: 300 грн</p>
+        </div>
+
+        <div class="order-item">
+            <h3>Піца "Маргарита"</h3>
+            <p>Кількість: 1</p>
+            <p>Ціна: 200 грн</p>
+        </div>
+
+        <div class="order-item">
+            <h3>Спагеті Карбонара</h3>
+            <p>Кількість: 1</p>
+            <p>Ціна: 180 грн</p>
+        </div>
+
+        <h3>Разом: 680 грн</h3>
+        
+        <a href="index.html" class="back-button">Назад до меню</a>
+    </div>
+
+</body>
+</html>

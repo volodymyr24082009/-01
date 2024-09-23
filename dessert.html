@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Десерт "Тірамісу" - Кафе "Смакота"</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(135deg, #0e1a24, #1c2a35);
+        color: #e0e0e0;
+        padding: 20px;
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .container:hover {
+        transform: scale(1.02);
+        box-shadow: 0 0 30px rgba(255, 0, 127, 0.5);
+      }
+      h1,
+      h2 {
+        text-align: center;
+        text-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+      }
+      img {
+        max-width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+      img:hover {
+        transform: scale(1.05);
+      }
+      .back-button {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 10px 20px;
+        background-color: #ff007f;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+      .back-button:hover {
+        background-color: #ff5e99;
+      }
+      .back-button,
+      .buy-button {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 10px 20px;
+        color: #ff007f; /* Рожевий текст */
+        text-decoration: none;
+        border: 2px solid #ff007f; /* Рожева рамка */
+        border-radius: 5px;
+        background-color: transparent; /* Прозорий фон */
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .back-button:hover,
+      .buy-button:hover {
+        background-color: #ff007f; /* Рожевий фон при наведенні */
+        color: #ffffff; /* Білий текст при наведенні */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Десерт "Тірамісу"</h1>
+      <img src="./Десерт Тірамісу.jfif" alt="Десерт Тірамісу" />
+      <h2>Опис</h2>
+      <p>
+        Тірамісу — це класичний італійський десерт з маскарпоне, кавою і
+        шоколадом. Солодкий, кремовий та неймовірно смачний!
+      </p>
+      <h2>Інгредієнти</h2>
+      <ul>
+        <li>Маскарпоне</li>
+        <li>Кава</li>
+        <li>Шоколад</li>
+        <li>Яйця</li>
+        <li>Цукор</li>
+      </ul>
+      <h2>Ціна: 120 грн</h2>
+      <a href="index.html" class="back-button">Назад до меню</a>
+    </div>
+  </body>
+</html>

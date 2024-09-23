@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Піца "Маргарита" - Кафе "Смакота"</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0e1a24, #1c2a35);
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2 {
+            text-align: center;
+            text-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        .back-button, .buy-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            color: #ff007f;
+            text-decoration: none;
+            border: 2px solid #ff007f;
+            border-radius: 5px;
+            background-color: transparent;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .back-button:hover, .buy-button:hover {
+            background-color: #ff007f;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Піца "Маргарита"</h1>
+        <img src="./Піца Маргарита.jfif" alt="Піца Маргарита">
+        <h2>Опис</h2>
+        <p>Піца "Маргарита" — це класичний італійський вибір...</p>
+        <h2>Інгредієнти</h2>
+        <ul>
+            <li>Тонке тісто</li>
+            <li>Томатний соус</li>
+            <li>Моцарела</li>
+            <li>Базилік</li>
+        </ul>
+        <h2>Ціна: 200 грн</h2>
+        <a href="index.html" class="back-button">Назад до меню</a>
+        <a href="checkout.html" class="buy-button">Купити</a>
+    </div>
+</body>
+</html>
