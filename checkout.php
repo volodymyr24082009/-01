@@ -2,7 +2,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST['name']);
     $email = htmlspecialchars($_POST['email']);
-    $item = htmlspecialchars($_POST['item']);
+ $item = htmlspecialchars($_POST['item']);
     $quantity = htmlspecialchars($_POST['quantity']);
 
     $to = "24g_chvv@liceum.ztu.edu.ua";
