@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Оформлення замовлення - Кафе "Смакота"</title>
+    <title>Оформлення замовлення</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -24,14 +23,12 @@
 
         h2 {
             text-align: center;
-            text-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
             margin-bottom: 20px;
         }
 
         label {
             display: block;
             margin-bottom: 5px;
-            font-weight: bold;
         }
 
         input, select {
@@ -55,18 +52,6 @@
         .submit-btn:hover {
             background-color: #ff5e99;
         }
-
-        .order-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .order-item h3 {
-            margin: 0;
-        }
     </style>
 </head>
 <body>
@@ -74,26 +59,11 @@
 <div class="container">
     <h2>Оформлення замовлення</h2>
 
-    <form action="checkout.php" method="POST">
+    <form id="order-form">
         <label for="name">Ім'я:</label>
         <input type="text" id="name" name="name" required>
 
         <label for="email">Електронна пошта:</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="item">Товар:</label>
-        <select id="item" name="item">
-            <option value="Салат 'Цезар'">Салат "Цезар"</option>
-            <option value="Піца 'Маргарита'">Піца "Маргарита"</option>
-            <option value="Спагеті Карбонара">Спагеті Карбонара</option>
-        </select>
-
-        <label for="quantity">Кількість:</label>
-        <input type="number" id="quantity" name="quantity" min="1" required>
-
-        <input type="submit" value="Оформити замовлення" class="submit-btn">
-    </form>
-</div>
-
-</body>
-</html>
+        <label
